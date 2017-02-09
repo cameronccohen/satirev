@@ -92,7 +92,7 @@ USE_MODELTRANSLATION = False
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [ "localhost", "mezz.satirev.org", "satirev.org" ]
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -143,17 +143,17 @@ FILE_UPLOAD_PERMISSIONS = 0o644
 DATABASES = {
     "default": {
         # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
-        "ENGINE": "django.db.backends.",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
         # DB name or path to database file if using sqlite3.
-        "NAME": "",
+        "NAME": "d2brptln19hana",
         # Not used with sqlite3.
-        "USER": "",
+        "USER": "orchznsgxxsfop",
         # Not used with sqlite3.
-        "PASSWORD": "",
+        "PASSWORD": "1a6250b5c7b1c90a5fe570255c320186d4aca0dba13d0311014e2ad05c5415a1",
         # Set to empty string for localhost. Not used with sqlite3.
-        "HOST": "",
+        "HOST": "ec2-184-72-252-69.compute-1.amazonaws.com",
         # Set to empty string for default. Not used with sqlite3.
-        "PORT": "",
+        "PORT": 5432,
     }
 }
 
