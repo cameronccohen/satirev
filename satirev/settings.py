@@ -92,7 +92,7 @@ USE_MODELTRANSLATION = False
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = [ "localhost", "mezz.satirev.org", "satirev.org" ]
+ALLOWED_HOSTS = [ "localhost", "mezz.satirev.org", "satirev.org", "satirev-development.herokuapp.com" ]
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -173,7 +173,11 @@ PROJECT_ROOT = BASE_DIR = os.path.dirname(PROJECT_APP_PATH)
 # project specific.
 CACHE_MIDDLEWARE_KEY_PREFIX = PROJECT_APP
 
+# After running collectstatic, this is the place Django will 
+# put all of the static files, so they can be in one place
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+
+# This is the url prefix that you can serve static files under
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
@@ -248,7 +252,7 @@ INSTALLED_APPS = (
     "mezzanine.forms",
     "mezzanine.galleries",
     "mezzanine.twitter",
-    # "mezzanine.accounts",
+    "mezzanine.accounts",
     # "mezzanine.mobile",
 )
 
