@@ -140,6 +140,7 @@ FILE_UPLOAD_PERMISSIONS = 0o644
 # DATABASES #
 #############
 
+# PRODTODO: don't have these publically viewable. local_settings.py?
 DATABASES = {
     "default": {
         # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
