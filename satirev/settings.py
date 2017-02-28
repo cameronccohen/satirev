@@ -101,7 +101,7 @@ ALLOWED_HOSTS = [ "localhost", "mezz.satirev.org", "satirev.org", "satirev-devel
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'US'
 
 # If you set this to True, Django will use timezone-aware datetimes.
 USE_TZ = True
@@ -181,9 +181,6 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
-)
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
