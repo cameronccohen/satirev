@@ -4,6 +4,7 @@ chardet==2.3.0
 dj-database-url==0.4.2
 Django==1.10.5
 django-contrib-comments==1.8.0
+django-select2-forms==5.8.10
 filebrowser-safe==0.4.6
 future==0.16.0
 grappelli-safe==0.4.5
@@ -11,7 +12,6 @@ gunicorn==19.6.0
 html5lib==0.9999999
 Jinja2==2.9.5
 MarkupSafe==0.23
-Mezzanine==4.2.2
 oauthlib==2.0.1
 olefile==0.44
 Pillow==4.0.0
