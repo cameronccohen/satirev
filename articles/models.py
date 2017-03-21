@@ -2,6 +2,11 @@ from __future__ import unicode_literals
 
 import os
 from django.db import models
+import re
+from bs4 import BeautifulSoup
+
+
+
 #import select2.fields
 
 
@@ -19,20 +24,21 @@ class Tag(models.Model):
         # Can't use .format because name is not always
         return '/news/tag/' +  str(self.slug)
 
-class Category(models.Model):
+class Section(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(max_length=100)
     def __unicode__(self):
         return self.name
 
 class Image(models.Model):
-    path = models.CharField(max_length=1000, blank=True)
+
+    image = models.ImageField(upload_to=upload_image_to, blank=True)
     caption = models.TextField(max_length=10000, blank=True)
-    slug = models.SlugField(max_length=100)
+
     def __unicode__(self):
         return str(self.id)
     def get_absolute_url(self):
-        return "/media/" + path
+        return "/media/" + image.url
 
         # Create your models here.
 class Article(models.Model):
@@ -51,21 +57,15 @@ class Article(models.Model):
     # )
 
     posted = models.DateTimeField(auto_now_add=True)
-    category = models.ForeignKey('Category', related_name="category")
+    Section = models.ForeignKey('Section')
+    tags = models.ManyToManyField(Tag, blank=True)
+    image = models.ForeignKey(Image,null=True, blank=True, default = None)
+    
 
-    #PRODTODO - add this in later
-    #tags = select2.fields.ManyToManyField(Tag, blank=True, default = None)
-
-
-    #posted = select2.fields.ManyToManyField(Category)
-    #authors = select2.fields.ManyToManyField(Author, blank=True, default = None)
-
-    first_image = models.ForeignKey(Image,null=True, blank=True, default = None)
-    lead_photo = models.ImageField(upload_to=upload_image_to, blank=True, null=True)
     def __unicode__(self):
         return self.title
     def get_absolute_url(self):
-        return '/ar/post/'+ self.slug
+        return '/article/{0}'.format(self.slug)
     def crop_first_image(self):
         return self.first_image
     def teaser(self):

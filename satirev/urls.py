@@ -22,6 +22,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^articles/', include('articles.urls')),
     url(r'^admin/', admin.site.urls),
-] 
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
 #PRODTODO HAVE TO DELETE THE ABOVE static part for production!!
 #https://docs.djangoproject.com/en/1.10/howto/static-files/deployment/
