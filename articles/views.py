@@ -22,9 +22,21 @@ def index(request):
 	template_name = 'articles/index.html'
 	return render(request, template_name, data)
 
-def section(request, section_id):
-	return "hello"
+def section(request, section):
+
+	# get posts in descending order by date
+	posts = Article.objects.filter(Section__name__iexact=section).order_by('posted')[:10]
+	data = { "recents" : posts }
+	
+	template_name = 'articles/section.html'
+	return render(request, template_name, data)
 
 def article(request, slug):
-	return "hello"
+
+	article = Article.objects.get(slug__iexact=slug)
+	data = { "article" : article }
+	
+	template_name = 'articles/article.html'
+	return render(request, template_name, data)
+
 

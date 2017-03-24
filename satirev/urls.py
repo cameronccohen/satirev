@@ -17,10 +17,12 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-
+import articles
 
 urlpatterns = [
-    url(r'^articles/', include('articles.urls')),
+	url(r'^$', include('articles.urls')),
+	url(r'^article/(?P<slug>[a-zA-Z\d_\-]+)/$', articles.views.article, name='article'),
+	url(r'^section/(?P<section>[a-zA-Z\d_\-]+)/$', articles.views.section, name='section'),
     url(r'^admin/', admin.site.urls),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

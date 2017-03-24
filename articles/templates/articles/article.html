@@ -1,0 +1,15 @@
+<div id="article">
+    <div id="article-header">
+    	<h1 id="top">{{ article.title }}</h1>
+    </div>
+
+    <div id="article-body">
+    	<div class="lead-image">
+    		<img src="{{ article.image.image.url }}" title="{{ article.image.caption }}" alt="{{ image.caption }}">
+    		<div class="caption"> {{ article.image.caption }} </div>
+    	</div>
+    	<div id="text">
+    	{{ article.body }}
+    	</div>
+    </div>
+</div>
