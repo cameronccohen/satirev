@@ -39,4 +39,9 @@ def article(request, slug):
 	template_name = 'articles/article.html'
 	return render(request, template_name, data)
 
+def about(request):
+
+	template_name = 'articles/extra/about.html'
+	return render(request,template_name)
+
 

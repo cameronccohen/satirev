@@ -1,0 +1,4 @@
+#!/Users/Cameron/satirev/venv/bin/python
+
+from scrapy.cmdline import execute
+execute()

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{% block title %}Satire V{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="http://static.thecrimson.com/images/seal.jpg">
+    <link rel="stylesheet" href="https://s3.amazonaws.com/static.thecrimson.com/CACHE/css/7a564c81eab0.css" type="text/css" media="all" />
+    <script type="text/javascript">
+    CURR_URI = "http://www.thecrimson.com/";
+    </script>
+    <script type="text/javascript" src="http://static.thecrimson.com.s3.amazonaws.com/CACHE/js/f9dbcfbad10e.js"></script>
+    <script type="text/javascript">
+    var NREUMQ = NREUMQ || [];
+    NREUMQ.push(["mark", "firstbyte", new Date().getTime()]);
+    </script>
+</head>
+
+<body>
+    <header>
+        <div id="masthead">
+            <div id="masthead-first-wrapper">
+                <div id="toolbar">
+                    <div id="toolbar-container">
+                        <nav id="toolbar-colophon">
+                            <ul>
+                                <li><a href="/about/">About Us</a></li>
+                                <li><a href="/advertising/" target="_blank">Advertising</a></li>
+                                <li><a href="/subscribe/">Subscribe</a></li>
+                            </ul>
+                        </nav>
+                        <nav id="toolbar-social">
+                        </nav>
+                        <div id="toolbar-weather">
+                            <a href="http://www.accuweather.com/en/us/cambridge-ma/02138/weather-forecast/756_pc"><span
+                                class="weather-locale">Cambridge, MA</span> Weather: 48&deg;F <img alt="sun" src="http://static.thecrimson.com/images/icons/sun.svg" width="16" height="16" style="vertical-align: bottom; margin-left: 2px;"/></a>
+
+                    </div>
+                    <div id="masthead-search-mobile">
+                        <form action="/search/" id="cse-search-box">
+                            <input type="hidden" name="cx" value="013815813102981840311:aw6l9tjs1a0"/>
+                            <input type="hidden" name="cof" value="FORID:10"/>
+                            <input type="hidden" name="ie" value="UTF-8"/>
+                            <input type="text" class="query" name="q"/>
+                            <button class="search-submit" type="submit" name="sa">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="masthead-first">
+                <div id="masthead-first-container">
+                    <h1><a href="/">Satire V</a></h1>
+                            <div id="masthead-search">
+                                <form action="/search/" id="cse-search-box">
+                                    <input type="hidden" name="cx" value="013815813102981840311:aw6l9tjs1a0" />
+                                    <input type="hidden" name="cof" value="FORID:10" />
+                                    <input type="hidden" name="ie" value="UTF-8" />
+                                    <input type="text" class="query" name="q" />
+                                    <button class="search-submit" type="submit" name="sa">Search</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="masthead-second">
+                    <nav id="masthead-nav-mobile">
+                        <ul>
+                            <li><a href="#">Sections</a></li>
+                        </ul>
+                    </nav>
+                    <nav id="masthead-nav" class="mobile-hidden">
+                        {% block nav %}
+                        <ul>
+                            <li><a href="/section/harvard/">Harvard</a></li>
+                            <li><a href="/section/region/">Region</a></li>
+                            <li><a href="/section/us/">U.S.</a></li>
+                            <li><a href="/section/world/">World</a></li>
+                            <li><a href="/section/opinion/">Opinion</a></li>
+                            <li><a href="/section/everything-else/">Everything Else</a></li>
+                        </ul>
+                        {% endblock nav %}
+                    </nav>
+                </div>
+            </div>
+    </header>
+    <div id="content">
+        <div class="leaderboard">
+            <div id="ad-TheCrimson_Homepage_ATF_728x90" style="width: 728px; height: 90px;">
+                <script type='text/javascript'>
+                if (Crimson.Responsive.isMobile === (0 === 1) || (0 === 0)) {
+                    googletag.cmd.push(function() {
+                        googletag.display('ad-TheCrimson_Homepage_ATF_728x90');
+                    });
+                }
+                </script>
+            </div>
+        </div>
+        {% block body %} {% endblock body %}
+        <div class="leaderboard">
+            <div id="ad-TheCrimson_AllArticles_BTF_728x90" style="width: 728px; height: 90px;">
+                <script type='text/javascript'>
+                if (Crimson.Responsive.isMobile === (0 === 1) || (0 === 0)) {
+                    googletag.cmd.push(function() {
+                        googletag.display('ad-TheCrimson_AllArticles_BTF_728x90');
+                    });
+                }
+                </script>
+            </div>
+        </div>
+        <footer>
+            <div id="footer-first">
+                <h1><a href="/">Satire V</a></h1>
+            </div>
+            <div id="footer-second">
+                <p>Copyright &copy; 2017 Satire V</p>
+                <p>Satire V identifies as chaotic good.</p>
+                <p>Content on this website is satirical and should not be construed as fact. Please.</p>
+                <nav id="footer-nav">
+                    <ul>
+                        <li><a href="/about/">About Us</a></li>
+                        <li><a href="/contact/">Contact Us</a></li>
+                        <li><a href="/privacy/">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

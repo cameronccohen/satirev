@@ -23,6 +23,7 @@ urlpatterns = [
 	url(r'^$', include('articles.urls')),
 	url(r'^article/(?P<slug>[a-zA-Z\d_\-]+)/$', articles.views.article, name='article'),
 	url(r'^section/(?P<section>[a-zA-Z\d_\-]+)/$', articles.views.section, name='section'),
+    url(r'^about/', articles.views.about, name='about'),
     url(r'^admin/', admin.site.urls),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

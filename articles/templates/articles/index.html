@@ -1,5 +1,9 @@
+{% extends 'articles/base.html' %}
+{% block body %}
+
+
 <section id="primary">
-    <div class="primary-first">
+    <div id="primary-first">
         {% for article in recents %} 
         {% if forloop.counter == 1 %}
         <div class="article feature">
@@ -20,7 +24,7 @@
         {% endfor %}
     </div>
 
-     <div class="primary-second">
+     <div id="primary-second">
         {% for article in recents %} 
         {% if forloop.counter == 5 %}
         <div class="article bigger">
@@ -38,10 +42,88 @@
         {% endfor %}
     </div>
 
-    <div class="primary-third">
-    This is where FLYBY and Most-Read content will go
-    </div>
+     <div id="primary-third">
+            <div class="blog-shell">
+                <div class="blog-box">
+                    <div class="blog-feature">
+                        <div class="article-image">
+                            <a href="/article/2014/4/6/drinks-that-will-knock/">
+                                <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2014/04/04/125145_1295578.jpg.305x207_q95_crop-smart_upscale.jpg"
+                                     title="Janelle Monáe Flyby" alt="Janelle Monáe Flyby"/>
+                            </a>
+                        </div>
+                        <h2 class="blog-title" id="flyby-title">
+                            <a href="/section/flyby">
+                                <span class="flyby-flyby">Flyby</span> Blog
+                            </a>
+                        </h2>
+
+                        <div class="blog-entry">
+                            <h3><a href="/article/2014/4/6/drinks-that-will-knock/">Drinks That Will Knock You Off That
+                                Tightrope: How to Pregame Janelle Monáe</a></h3>
+
+                            <div class="article-byline">
+                                <span class="article-date">25 minutes ago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-more">
+
+                        <div class="blog-another">
+                            <div class="article-thumbnail">
+                                <a href="#">
+                                    <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2010/11/28/225909_1243028.jpg.40x40_q95_crop-smart_upscale.jpg"
+                                         title="Students in Lamont" alt="Students in Lamont"/>
+                                </a>
+                            </div>
+                            <div class="blog-entry">
+                                <h4><a href="/article/2014/4/5/thirsty-thursday-in-lamont/">Thirsty Thursday in
+                                    Lamont</a>
+                                </h4>
+
+                                <div class="article-byline"><span class="article-date">Yesterday</span></div>
+                            </div>
+                        </div>
+
+                        <div class="blog-another">
+                            <div class="article-thumbnail">
+                                <a href="#">
+                                    <img src="http://thumbnails.thecrimson.com.s3.amazonaws.com/photos/2014/04/04/150508_1295581.jpg.40x40_q95_crop-smart_upscale.jpg"
+                                         title="Taylor Swift" alt="Taylor Swift"/>
+                                </a>
+                            </div>
+                            <div class="blog-entry">
+                                <h4><a href="/article/2014/4/4/move-over-miley/">Move Over, Miley: Celebs Harvard Really
+                                    Wants
+                                    to See</a></h4>
+
+                                <div class="article-byline"><span class="article-date">2 days ago</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            {# include 'helpers/most_read.html' #}
+
+            <div class="sidekick-shell">
+                <div class="sidekick">
+                    <div id="ad-TheCrimson_Homepage_ATF_300x250" style="width: 300px; height: 250px;">
+                        <script type='text/javascript'>
+                            if (Crimson.Responsive.isMobile === (0 === 1)
+                                    || (0 === 0)) {
+                                googletag.cmd.push(function () {
+                                    googletag.display('ad-TheCrimson_Homepage_ATF_300x250');
+                                });
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 </section>
 
-
+{% endblock body %}
