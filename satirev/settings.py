@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'redactor',
 ]
 
 MIDDLEWARE = [
@@ -122,3 +123,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Redactor settings
+REDACTOR_OPTIONS = {'lang': 'en'}
+REDACTOR_UPLOAD = 'uploads/'

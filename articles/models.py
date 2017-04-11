@@ -4,6 +4,7 @@ import os
 from django.db import models
 import re
 from bs4 import BeautifulSoup
+from redactor.fields import RedactorField
 
 
 
@@ -45,16 +46,13 @@ class Article(models.Model):
     title = models.CharField(max_length=300)
     slug = models.SlugField(max_length=100)
     
-    # PRODTODO have to make this rich text later
-
-    body = models.TextField(max_length=10000, blank=True)
-    # body = RedactorField(
-    #     verbose_name=u'Text',
-    #     redactor_options={'lang': 'en', 'focus': 'true'},
-    #     upload_to='tmp/',
-    #     allow_file_upload=True,
-    #     allow_image_upload=True
-    # )
+    body = RedactorField(
+        verbose_name=u'Text',
+        redactor_options={'lang': 'en', 'focus': True},
+        upload_to='tmp/',
+        allow_file_upload=True,
+        allow_image_upload=True
+    )
 
     posted = models.DateTimeField(auto_now_add=True)
     Section = models.ForeignKey('Section')
