@@ -5,6 +5,7 @@ from django.db import models
 import re
 from bs4 import BeautifulSoup
 from redactor.fields import RedactorField
+from versatileimagefield.fields import VersatileImageField
 
 
 
@@ -33,7 +34,7 @@ class Section(models.Model):
 
 class Image(models.Model):
 
-    image = models.ImageField(upload_to=upload_image_to, blank=True)
+    image = VersatileImageField(upload_to=upload_image_to, blank=True)
     caption = models.TextField(max_length=10000, blank=True)
 
     def __unicode__(self):

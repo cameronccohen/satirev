@@ -29,7 +29,7 @@
         {% if forloop.counter == 5 %}
         <div class="article bigger">
             <div class="article-content">
-                <h2><a href="{{ article.get_absolute_url }}">{{article.title}}</a></h2>
+                <h3><a href="{{ article.get_absolute_url }}">{{article.title}}</a></h2>
                 <p>{{ article.teaser|safe }}</p>
             </div>
         </div>

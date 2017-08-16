@@ -8,9 +8,7 @@
 
         <div id="article-body">
             <div id="text">
-
-                
-                            <img src="{{ article.image.image.url }}" title="{{ article.image.caption }}" alt="{{ image.caption }}"></a>
+                            <img src="{{ article.image.image.thumbnail.500x500.url }}" title="{{ article.image.caption }}" alt="{{ image.caption }}"></a>
                             <div class="shortcodes-description"> {{ article.image.caption }}
                             </div>
                    
@@ -19,10 +17,9 @@
 
                 <div id="article-tags">
                     <h3>Tags</h3>
-
                     <div>
                         {% for tag in article.tags.all %}
-                        <a href="/tag/{{ tag }}">{{ tag }}</a>
+                        <a href="/tag/{{ tag.slug }}">{{ tag }}</a>
                         {% endfor %}
                     </div>
                 </div>

@@ -7,7 +7,7 @@ from .models import *
 def index(request):
 
 	# get posts in descending order by date
-	posts = Article.objects.all().order_by('posted')[:10]
+	posts = Article.objects.all().order_by('-posted')[:10]
 	data = { "recents" : posts }
 
 
@@ -25,7 +25,7 @@ def index(request):
 def section(request, section):
 
 	# get posts in descending order by date
-	posts = Article.objects.filter(Section__name__iexact=section).order_by('posted')[:10]
+	posts = Article.objects.filter(Section__name__iexact=section).order_by('-posted')[:10]
 	data = { "recents" : posts }
 	
 	template_name = 'articles/section.html'
@@ -43,5 +43,13 @@ def about(request):
 
 	template_name = 'articles/extra/about.html'
 	return render(request,template_name)
+
+def tag(request, tag):
+
+	posts = Article.objects.filter(tags__slug=tag).order_by('-posted')[:10]
+	data = { "recents" : posts, "tag" : tag }
+
+	template_name = 'articles/tag.html'
+	return render(request, template_name, data)
 
 
