@@ -42,7 +42,6 @@ class Image(models.Model):
     def get_absolute_url(self):
         return "/media/" + image.url
 
-        # Create your models here.
 class Article(models.Model):
     title = models.CharField(max_length=300)
     slug = models.SlugField(max_length=100)
@@ -56,7 +55,7 @@ class Article(models.Model):
     )
 
     posted = models.DateTimeField(auto_now_add=True)
-    Section = models.ForeignKey('Section')
+    Section = models.ForeignKey(Section)
     tags = models.ManyToManyField(Tag, blank=True)
     image = models.ForeignKey(Image,null=True, blank=True, default = None)
     
@@ -76,5 +75,12 @@ class Article(models.Model):
             if txt.index("(function") < i:
                 i = txt.index("(function") 
         return txt[:i]
+
+class MostRead(models.Model):
+    a1 = models.ForeignKey(Article, related_name="+")
+    a2 = models.ForeignKey(Article, related_name="+")
+    a3 = models.ForeignKey(Article, related_name="+")
+    a4 = models.ForeignKey(Article, related_name="+")
+    a5 = models.ForeignKey(Article, related_name="+")
 
 

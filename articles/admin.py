@@ -4,6 +4,7 @@ from mce_filebrowser.admin import MCEFilebrowserAdmin
 
 # Register your models here.
 
+admin.site.register(MostRead)
 admin.site.register(Image)
 
 class TagAdmin(admin.ModelAdmin):
