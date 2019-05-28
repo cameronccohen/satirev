@@ -26,7 +26,7 @@ def index(request):
 def section(request, section):
 
 	data = {}
-	print Article.objects.filter(Section__slug__iexact=section).order_by('-posted')[:10]
+	# print Article.objects.filter(Section__slug__iexact=section).order_by('-posted')[:10]
 	# get posts in descending order by date
 	data["recents"] = Article.objects.filter(Section__slug__iexact=section).order_by('-posted')[:10]
 	data["most_read"] = MostRead.objects.get()
@@ -43,6 +43,15 @@ def article(request, slug):
 
 	template_name = 'article.html'
 	return render(request, template_name, data)
+
+def advertising(request):
+  template_name = 'extra/advertising.html'
+  return render(request,template_name)
+
+def subscribe(request):
+  template_name = 'extra/subscribe.html'
+  return render(request,template_name)
+
 
 def about(request):
 

@@ -50,14 +50,14 @@ class Article(models.Model):
         verbose_name=u'Text',
         redactor_options={'lang': 'en', 'focus': True},
         upload_to='tmp/',
-        allow_file_upload=True,
-        allow_image_upload=True
+        # allow_file_upload=True,
+        # allow_image_upload=True
     )
 
     posted = models.DateTimeField(auto_now_add=True)
-    Section = models.ForeignKey(Section)
+    Section = models.ForeignKey(Section, on_delete=True)
     tags = models.ManyToManyField(Tag, blank=True)
-    image = models.ForeignKey(Image,null=True, blank=True, default = None)
+    image = models.ForeignKey(Image,null=True, blank=True, default = None, on_delete=True)
     
 
     def __unicode__(self):
@@ -77,10 +77,10 @@ class Article(models.Model):
         return txt[:i]
 
 class MostRead(models.Model):
-    a1 = models.ForeignKey(Article, related_name="+")
-    a2 = models.ForeignKey(Article, related_name="+")
-    a3 = models.ForeignKey(Article, related_name="+")
-    a4 = models.ForeignKey(Article, related_name="+")
-    a5 = models.ForeignKey(Article, related_name="+")
+    a1 = models.ForeignKey(Article, related_name="+", on_delete=True)
+    a2 = models.ForeignKey(Article, related_name="+", on_delete=True)
+    a3 = models.ForeignKey(Article, related_name="+", on_delete=True)
+    a4 = models.ForeignKey(Article, related_name="+", on_delete=True)
+    a5 = models.ForeignKey(Article, related_name="+", on_delete=True)
 
 

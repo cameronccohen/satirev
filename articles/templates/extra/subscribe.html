@@ -1,0 +1,19 @@
+ {% extends 'base.html' %} {% block body %}
+<section id="main">
+    <div id="body" class="flatpage">
+        <h1>Subscribe</h1>
+        <p>Follow us by giving us all your personal details below. We will definitely not sell your information to Mark Zuckerberg to fund the purchase of 57 pallets of raw hot dogs. </p>
+
+        <form id="frm1" action="/action_page.php">
+          Email: <input type="text" name="email"><br><br>
+          <input type="button" onclick="formSubmission()" value="Submit">
+        </form>
+
+        <script>
+        function formSubmission() {
+          document.getElementById("frm1").submit();
+        }
+        </script>
+    </div>
+</section>
+{% endblock body %}

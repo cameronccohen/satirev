@@ -10,7 +10,7 @@ from fnmatch import fnmatch
 # DJANGO IMPORTS
 from django.conf import settings
 from django.contrib import admin
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.utils.importlib import import_module
 
 

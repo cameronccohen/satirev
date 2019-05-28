@@ -24,6 +24,8 @@ urlpatterns = [
 	url(r'^article/(?P<slug>[a-zA-Z\d_\-]+)/$', articles.views.article, name='article'),
 	url(r'^section/(?P<section>[a-zA-Z\d_\-]+)/$', articles.views.section, name='section'),
     url(r'^about/', articles.views.about, name='about'),
+    url(r'^advertising/', articles.views.advertising, name='advertising'),
+    url(r'^subscribe/', articles.views.subscribe, name='subscribe'),
     url(r'^tag/(?P<tag>[a-zA-Z\d_\-]+)/$', articles.views.tag, name='tag'),
     url(r'^redactor/', include('redactor.urls')),
     url(r'^admin/', admin.site.urls),
